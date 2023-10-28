@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import Header from "./Components/Layout/Header";
 import Cart from "./Components/Cart/Cart";
 import CartProvider from "./Store/CartProvider";
@@ -9,9 +9,12 @@ import HomePage from "./Pages/Home/HomePage";
 import ContactUs from "./Pages/Contact/ContactUs";
 import ProductDetail from "./Components/Products/ProductDetails";
 import Login from "./Pages/Login/Login";
+import AuthContext from "./Store/auth-context";
 
 const App = () => {
   const [cartIsShown, setCartIsShown] = useState(false);
+  const authCtx = useContext(AuthContext);
+  console.log(authCtx.isLoggedIn);
 
   const showCartHandler = () => {
     setCartIsShown(true);
@@ -24,10 +27,12 @@ const App = () => {
       <Header onShowCart={showCartHandler} />
       <Switch>
         <Route path="/" exact>
-          <Redirect to="/store" />
+          <Redirect to="/home" />
         </Route>
+        {cartIsShown && <Cart onClose={hideCartHandler} />}
         <Route path="/store" exact>
-          <StorePage />
+          {authCtx.isLoggedIn && <StorePage />}
+          {!authCtx.isLoggedIn && <Redirect to="/auth" />}
         </Route>
         <Route path="/about">
           <AboutPage />
@@ -46,7 +51,6 @@ const App = () => {
         </Route>
       </Switch>
       <div></div>
-      {cartIsShown && <Cart onClose={hideCartHandler} />}
     </CartProvider>
   );
 };
