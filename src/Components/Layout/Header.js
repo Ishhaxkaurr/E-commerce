@@ -26,7 +26,7 @@ const Header = (props) => {
                   className={({ isActive }) =>
                     isActive ? classes.active : undefined
                   }
-                  end
+                  end="true"
                 >
                   STORE
                 </NavLink>
@@ -49,6 +49,16 @@ const Header = (props) => {
                   }
                 >
                   CONTACT US
+                </NavLink>
+              </li>
+              <li className={classes.li}>
+                <NavLink
+                  to="/auth"
+                  className={({ isActive }) =>
+                    isActive ? classes.active : undefined
+                  }
+                >
+                  LOGIN
                 </NavLink>
               </li>
             </ul>
