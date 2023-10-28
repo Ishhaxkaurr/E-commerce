@@ -7,13 +7,13 @@ import { useContext } from "react";
 const Cart = (props) => {
   const cxt = useContext(CartContext);
   const cartItems = (
-    <ul className={classes.card}>
+    <ul>
       {cxt.items.map((item) => (
         <li id={item.id} className={classes.content}>
           <div classname={classes.title}>{item.title}</div>
-          <div>{item.imageUrl}</div>
-          <div>Rs {item.price}</div>
-          <div>{item.quantity} </div>
+          <div className={classes.images}>{item.imageUrl}</div>
+          <div className={classes.price}>Rs {item.price}</div>
+          <div className={classes.quantity}>{item.quantity} </div>
           <Button
             variant="danger"
             size="sm"
@@ -36,7 +36,6 @@ const Cart = (props) => {
       </header>
       <h2>CART</h2>
       {cartItems}
-
       <div className={classes.total}>
         <span>Total Amount</span>
         <span>{cxt.totalAmount}</span>

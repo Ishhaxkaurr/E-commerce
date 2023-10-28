@@ -5,7 +5,7 @@ export const productsArr = [
   {
     id: "p1",
 
-    title: "Colors",
+    title: "Album 1",
 
     price: 100,
 
@@ -19,7 +19,7 @@ export const productsArr = [
 
   {
     id: "p2",
-    title: "Black and white Colors",
+    title: "Album 2",
 
     price: 50,
 
@@ -33,7 +33,7 @@ export const productsArr = [
 
   {
     id: "p3",
-    title: "Yellow and Black Colors",
+    title: "Album 3",
 
     price: 70,
 
@@ -48,7 +48,7 @@ export const productsArr = [
   {
     id: "p4",
 
-    title: "Blue Color",
+    title: "Album 4",
 
     price: 100,
 

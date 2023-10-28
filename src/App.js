@@ -1,9 +1,12 @@
 import React, { useState } from "react";
 
 import Header from "./Components/Layout/Header";
-import AvailableProducts from "./Components/Products/AvailableProducts";
+
 import Cart from "./Components/Cart/Cart";
 import CartProvider from "./Store/CartProvider";
+import AboutPage from "./Pages/AboutPage";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import StorePage from "./Pages/StorePage";
 
 const App = () => {
   const [cartIsShown, setCartIsShown] = useState(false);
@@ -16,9 +19,15 @@ const App = () => {
   };
   return (
     <CartProvider>
+      <Router>
+        <Header onShowCart={showCartHandler} />
+        <Routes>
+          <Route path="/store" element={<StorePage />}></Route>
+          <Route path="/about" element={<AboutPage />}></Route>
+        </Routes>
+      </Router>
+      <div></div>
       {cartIsShown && <Cart onClose={hideCartHandler} />}
-      <Header onShowCart={showCartHandler} />
-      <AvailableProducts />
     </CartProvider>
   );
 };
