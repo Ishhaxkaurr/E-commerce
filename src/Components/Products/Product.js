@@ -9,7 +9,7 @@ const Products = (props) => {
 
   const addItemToCart = (event) => {
     event.preventDefault();
-    cartCntx.addItem({ ...props, quantity: 1 });
+    cartCntx.addItem({ ...props.items, quantity: 1 });
   };
 
   return (
