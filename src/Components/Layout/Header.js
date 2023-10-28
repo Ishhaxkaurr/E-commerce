@@ -1,6 +1,7 @@
-import { Button, Container, Navbar } from "react-bootstrap";
+import { Container, Navbar } from "react-bootstrap";
 import classes from "./Header.module.css";
 import Nav from "react-bootstrap/Nav";
+import HeaderCartButton from "./HeaderCartButton";
 
 const Header = (props) => {
   return (
@@ -18,7 +19,7 @@ const Header = (props) => {
               <Nav.Link>ABOUT</Nav.Link>
             </li>
           </ul>
-          <Button className={classes["cart-button"]}>Your Cart</Button>
+          <HeaderCartButton onClick={props.onShowCart} />
         </Container>
       </Navbar>
       <h1>The Generics</h1>
