@@ -7,57 +7,35 @@ const Header = (props) => {
   return (
     <>
       <header>
-        <Navbar bg="dark" expand="sm" variant="dark">
+        <Navbar bg="dark" expand="sm" variant="dark" className={classes.navbar}>
           <Container>
-            <ul className={classes.header}>
+            <ul className={classes.ul}>
               <li className={classes.li}>
-                <NavLink
-                  to="/home"
-                  className={({ isActive }) =>
-                    isActive ? classes.active : undefined
-                  }
-                >
+                <NavLink to="/home" activeClassName={classes.active}>
                   HOME
                 </NavLink>
               </li>
               <li className={classes.li}>
                 <NavLink
                   to="/store"
-                  className={({ isActive }) =>
-                    isActive ? classes.active : undefined
-                  }
+                  activeClassName={classes.active}
                   end="true"
                 >
                   STORE
                 </NavLink>
               </li>
               <li className={classes.li}>
-                <NavLink
-                  to="/about"
-                  className={({ isActive }) =>
-                    isActive ? classes.active : undefined
-                  }
-                >
+                <NavLink to="/about" activeClassName={classes.active}>
                   ABOUT
                 </NavLink>
               </li>
               <li className={classes.li}>
-                <NavLink
-                  to="/contact"
-                  className={({ isActive }) =>
-                    isActive ? classes.active : undefined
-                  }
-                >
+                <NavLink to="/contact" activeClassName={classes.active}>
                   CONTACT US
                 </NavLink>
               </li>
               <li className={classes.li}>
-                <NavLink
-                  to="/auth"
-                  className={({ isActive }) =>
-                    isActive ? classes.active : undefined
-                  }
-                >
+                <NavLink to="/auth" activeClassName={classes.active}>
                   LOGIN
                 </NavLink>
               </li>
