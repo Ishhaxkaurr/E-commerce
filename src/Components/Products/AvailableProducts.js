@@ -15,6 +15,8 @@ export const productsArr = [
         alt="album 1"
       ></img>
     ),
+
+    description: "A multicolor picture album which suits your style.",
   },
 
   {
@@ -29,6 +31,8 @@ export const productsArr = [
         alt="album2"
       ></img>
     ),
+
+    description: "A Black and white monochrome picture.",
   },
 
   {
@@ -43,6 +47,8 @@ export const productsArr = [
         alt="album 3"
       ></img>
     ),
+
+    description: "Yellow lights to lighten up your day.",
   },
 
   {
@@ -58,6 +64,8 @@ export const productsArr = [
         alt="album 4"
       ></img>
     ),
+
+    description: "Blue Hues and Mist.",
   },
 ];
 const AvailableProducts = () => {

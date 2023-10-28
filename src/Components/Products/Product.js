@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { Button } from "react-bootstrap";
 import classes from "./AvailableProduct.module.css";
 import CartContext from "../../Store/cart-context";
+import { Link } from "react-router-dom";
 
 const Products = (props) => {
   const cartCntx = useContext(CartContext);
@@ -14,7 +15,9 @@ const Products = (props) => {
   return (
     <li className={classes.product} id={props.id}>
       <h2>{props.title}</h2>
-      <div className={classes["main-image"]}>{props.imageUrl}</div>
+      <div className={classes["main-image"]}>
+        <Link to={`/store/${props.id}`}>{props.imageUrl}</Link>
+      </div>
       <p>
         <b>Rs {props.price}</b>
       </p>

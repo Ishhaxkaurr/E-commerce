@@ -3,10 +3,11 @@ import Header from "./Components/Layout/Header";
 import Cart from "./Components/Cart/Cart";
 import CartProvider from "./Store/CartProvider";
 import AboutPage from "./Pages/About/AboutPage";
-import { Route } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 import StorePage from "./Pages/StorePage/StorePage";
 import HomePage from "./Pages/Home/HomePage";
 import ContactUs from "./Pages/Contact/ContactUs";
+import ProductDetail from "./Components/Products/ProductDetails";
 
 const App = () => {
   const [cartIsShown, setCartIsShown] = useState(false);
@@ -20,19 +21,23 @@ const App = () => {
   return (
     <CartProvider>
       <Header onShowCart={showCartHandler} />
-
-      <Route path="/store">
-        <StorePage />
-      </Route>
-      <Route path="/about">
-        <AboutPage />
-      </Route>
-      <Route path="/home">
-        <HomePage />
-      </Route>
-      <Route path="/contact">
-        <ContactUs />
-      </Route>
+      <Switch>
+        <Route path="/store" exact>
+          <StorePage />
+        </Route>
+        <Route path="/about">
+          <AboutPage />
+        </Route>
+        <Route path="/home">
+          <HomePage />
+        </Route>
+        <Route path="/contact">
+          <ContactUs />
+        </Route>
+        <Route path="/store/:productId">
+          <ProductDetail />
+        </Route>
+      </Switch>
 
       <div></div>
       {cartIsShown && <Cart onClose={hideCartHandler} />}
